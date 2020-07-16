@@ -1,0 +1,478 @@
+@import "bootstrap-theme.css";
+@import "bootstrap.css";
+@import "../fonts/fontsawesome/web-fonts-with-css/css/fontawesome-all.css";
+@import "owl.theme.default.min.css";
+@import "owl.carousel.min.css";
+
+$f_fam: 'Source Sans pro', sans-serif;
+$f_regular: 400;
+$f_sbold: 600;
+$f_bold: 700;
+$text_col: #999;
+$text_fz: 18px;
+$span_col: #008ed6;
+$span_fz: 14px;
+
+
+%text {
+  font-family: $f_fam;
+  font-weight: $f_regular;
+  font-size: $text_fz;
+  color: $text_col;
+}
+
+%span {
+  font-family: $f_fam;
+  font-weight: $f_bold;
+  font-size: 14px;
+  color: #008ed6;
+}
+
+%h {
+  font-family: $f_fam;
+  font-weight: $f_bold;
+  font-size: 36px;
+  color: #1a1a1a;
+}
+
+%btn {
+  width: 160px;
+  height: 50px;
+  border: 1px #4d4e53 solid;
+  border-radius: 4px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: $f_fam;
+  font-weight: $f_bold;
+  font-size: 14px;
+  line-height: 35px;
+  transition: 0.3s;
+}
+
+%pseudo_a {
+  content: '';
+  display: block;
+  width: 42px;
+  height: 2px;
+  background-color: #008ed6;
+  position: absolute;
+  left: 50%;
+  margin-left: -21px;
+  bottom: -36px;
+}
+
+%pseudo_b {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  margin-left: -1px;
+  bottom: -36px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+}
+
+.main_bg {
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+  overflow: hidden;
+  //height: 100vh;
+
+
+}
+
+.navbar-default {
+  background-color: transparent;
+  border: none;
+  background-image: none;
+  padding-top: 42px;
+  margin-bottom: 52px;
+
+  .navbar-toggle {
+    bottom: 10px;
+    border-color: #008ed6;
+    background-color: transparent;
+
+    &:hover, &:focus {
+      border-color: #008ed6;
+      background-color: transparent;
+    }
+
+    .icon-bar {
+      background-color: #008ed6;
+    }
+  }
+
+  .navbar-brand {
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0;
+
+  }
+
+  .navbar-nav > li {
+    margin-left: 22px;
+    position: relative;
+
+    a {
+      font-size: 16px;
+      color: #fff;
+      padding: 0;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 2px;
+      height: 2px;
+      background-color: #008ed6;
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+      left: 50%;
+      margin-left: -1px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      width: 2px;
+      height: 2px;
+      position: absolute;
+      z-index: 2;
+      background-color: #16151b;
+      left: 50%;
+      margin-left: -1px;
+      bottom: 0;
+    }
+
+    &:hover, &.active {
+      &:after {
+        transition: 0.5s;
+        width: 100%;
+        bottom: -13px;
+        left: 0;
+        margin-left: 0;
+      }
+
+      &:before {
+        transition: 0.5s;
+        bottom: -13px;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      & {
+        text-align: center;
+
+        &:after {
+          width: 0;
+          height: 0;
+        }
+
+        &:before {
+          width: 0;
+          height: 0;
+        }
+
+        & > a:hover, & > a:focus {
+          color: #008ed6;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    margin-bottom: 10px;
+  }
+}
+
+.main_title {
+  span {
+    @extend %span;
+    margin-bottom: 33px;
+  }
+
+  h1 {
+    color: #fff;
+    font-size: 48px;
+    font-family: $f_fam;
+    font-weight: $f_sbold;
+    margin-bottom: 36px;
+  }
+
+  p {
+    @extend %text;
+    line-height: 25px;
+    margin-bottom: 65px;
+  }
+
+  a {
+    @extend %btn;
+    margin-right: 20px;
+
+    &:hover {
+      background-color: #008ed6;
+      border: 1px solid #008ed6;
+      color: #fff;
+    }
+
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      width: 150px;
+    }
+  }
+
+  .img_phones {
+    max-width: 427px;
+    padding-top: 10px;
+    position: relative;
+
+    img {
+      width: 100%;
+      position: absolute;
+      top: 10px;
+
+    }
+  }
+
+  .col-md-6 {
+    margin-top: 42px;
+  }
+}
+
+.features {
+  padding-top: 65px;
+  padding-bottom: 60px;
+  border-bottom: 1px #ededed solid;
+
+  span {
+    @extend %span;
+    margin-bottom: 22px;
+  }
+
+  h2 {
+    @extend %h;
+    position: relative;
+    margin-bottom: 115px;
+
+    &:after {
+      @extend %pseudo_a;
+    }
+
+    &:before {
+      @extend %pseudo_b;
+      background-color: #fff;
+    }
+  }
+
+  .col-md-3 {
+    margin-bottom: 17px;
+    &:before {
+      content: '\f108 ';
+      display: block;
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      font-size: 26px;
+      color: #008ed6;
+      max-width: 90px;
+      height: 90px;
+      margin: auto;
+      border: 1px #e0e0e0 solid;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 90px;
+      margin-bottom: 35px;
+    }
+
+    &:nth-child(2):before {
+      content: '\f013';
+    }
+
+    &:nth-child(3):before {
+      content: '\f164';
+    }
+
+    &:last-of-type:before {
+      content: '\f3cd';
+    }
+
+    //почему иконки смещаются?
+
+    h4 {
+      color: #1a1a1a;
+      font-size: 24px;
+      font-family: $f_fam;
+      font-weight: $f_regular;
+      margin-bottom: 18px;
+    }
+
+    p {
+      @extend %text;
+      line-height: 26px;
+      max-width: 230px;
+      margin: auto;
+    }
+  }
+}
+
+.responsive {
+  padding-top: 66px;
+  padding-bottom: 15px;
+  span {
+    @extend %span;
+    display: block;
+    margin-top: 53px;
+  }
+
+  h3 {
+    @extend %h;
+    margin-top: 24px;
+    position: relative;
+    margin-bottom: 68px;
+
+    &:after {
+      @extend %pseudo_a;
+      margin-left: 0;
+      left: 0;
+    }
+
+    &:before {
+      @extend %pseudo_b;
+      left: 20px;
+      margin-left: 0;
+      background-color: #fff;
+    }
+  }
+
+  p {
+    @extend %text;
+    line-height: 26px;
+    margin-bottom: 43px;
+  }
+
+  .benefit {
+    font-size: $text_fz;
+    color: #1b1b1b;
+    font-family: $f_fam;
+    font-weight: $f_regular;
+
+    &:before {
+      content: '\f091';
+      display: inline-block;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      color: #008ed6;
+      font-size: 16px;
+      margin-right: 9px;
+      margin-bottom: 20px;
+    }
+
+    &:nth-child(2):before {
+      content: '\f25a';
+    }
+
+    &:nth-child(3):before {
+      content: '\f0e7';
+    }
+
+    &:last-of-type:before {
+      content: '\f3fd';
+    }
+  }
+}
+//снова проблема с иконками???
+
+.customize {
+  background-color: #f2f2f2;
+  padding: 26px 0;
+
+  span {
+    @extend %span;
+    display: block;
+    margin-top: 53px;
+  }
+
+  h3 {
+    @extend %h;
+    margin-top: 24px;
+    position: relative;
+    margin-bottom: 68px;
+
+    &:after {
+      @extend %pseudo_a;
+      margin-left: 0;
+      left: 0;
+    }
+
+    &:before {
+      @extend %pseudo_b;
+      left: 20px;
+      margin-left: 0;
+      background-color: #fff;
+    }
+  }
+
+  p {
+    @extend %text;
+    line-height: 26px;
+    margin-bottom: 43px;
+  }
+}
+
+.reviews {
+  background-image: url("../img/bg2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 64px;
+  text-align: center;
+
+  span {
+    @extend %span;
+    margin-bottom: 19px;
+  }
+
+  h3 {
+    @extend %h;
+    color: #fff;
+    margin-bottom: 125px;
+    position: relative;
+
+    &:after {
+      @extend %pseudo_a;
+    }
+
+    &:before {
+      @extend %pseudo_b;
+      background-color: #2d1d1e;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
